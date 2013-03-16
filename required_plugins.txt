@@ -1,0 +1,9 @@
+1) Advanced Custom Fields with Gallery and repeater fields activated:
+
+	Activation Gallery Key: GF72-8ME6-JS15-3PZC
+	Activation Repeater Code: QJF7-L4IX-UCNP-RF2W
+
+2) REGENERATE THUMBNAILS PLUGIN - optional
+
+3) W3 TOTAL CACHE PLUGIN - optional
+
