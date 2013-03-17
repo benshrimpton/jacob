@@ -34,10 +34,10 @@ get_header(); ?>
 		?>
 		<?php foreach( $images as $image ): ?>
 		<div class="thumb">
-			<img src="<?php echo $image['sizes']['thumbnail']; ?>" data-large="<?php echo $image['sizes']['large']; ?>" />
+			<img src="<?php bloginfo( 'template_url' ); ?>/css/img/loader.gif" data-large="<?php echo $image['sizes']['large']; ?>" class="lazy" data-original="<?php echo $image['sizes']['thumbnail']; ?>"/>
 			<div class="data">
-				<?php echo $image['title']; ?>
-				<?php echo $image['description']; ?>
+				<h3><?php echo $image['title']; ?></h3>
+				<p><?php echo $image['caption']; ?></p>
 			</div>
 		</div>
 		

@@ -21,7 +21,7 @@ $image = $images[0];
 ?>
 	<?php $image_text = array(); ?>
 	<?php foreach( $images as $image ): ?>
-		 <?php $image_text[] = "{ image :'". $image['sizes']['large'] . "', thumb: '".  $image['sizes']['thumbnail'] ."'}"; ?>
+		 <?php $image_text[] = "{ image :'". $image['sizes']['large']."'}"; ?>
 	<?php endforeach; ?>
 	<?php echo implode( $image_text, ","); ?>
 <?php endwhile; endif;  ?>
@@ -46,14 +46,9 @@ $('.home .main-header').imagesLoaded(function() {
 	var headerheight = $('.main-header').outerHeight() / 2;
 	var galHeight = $(window).height();
 	var galWidth = $(window).width();
-	$('.home .main-header').delay(1000).animate({ 'margin-top':'-'+headerheight+'px', 'top':'50%'}, 2000, 'easeInOutCubic');
-	
+	var headerTop = galHeight / 2;
+	$('.main-header').animate({ 'top': headerTop+'px'}, 600, 'easeInOutCubic');
 });
-	
-			
-	
-
-	
 
 
 /*

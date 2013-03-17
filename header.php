@@ -75,11 +75,11 @@ wp_head();
 <header role="banner" class="main-header">
 
 <!-- <a href="#" id="toggle-nav">&#9776;</a> -->
-<a href="#" id="toggle-grid">&#9776;</a>
+	<!-- <a href="#" id="toggle-grid">&#9776;</a> -->
 
 <a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 <?php if(is_front_page() ) : ?>
-	<img src="<?php bloginfo( 'template_url' ); ?>/css/img/logo-white.png" alt="Sarah Cobb Logo" id="logo"/>
+	<img src="<?php bloginfo( 'template_url' ); ?>/css/img/logo-small.png" alt="Sarah Cobb Logo" id="logo"/>
 <? else :  ?>
 	<img src="<?php bloginfo( 'template_url' ); ?>/css/img/logo-small.png" alt="Sarah Cobb Logo" id="logo"/>
 <?php endif; ?>
@@ -90,7 +90,7 @@ wp_head();
 <?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu.  The menu assiged to the primary position is the one used.  If none is assigned, the menu with the lowest ID is used.  */ ?>
 <?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
 </nav><!-- #access -->
-
+	<div class="clear"></div>
 </header>
 
 

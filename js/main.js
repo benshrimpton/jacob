@@ -59,8 +59,24 @@ $('.thumb').on('click', function() {
 });
  
   
-				
+	
+$(window).on('scroll', function() {
+	if(!iPhoneAgent){ 
+		var scrollDistance  = $(this).scrollTop();
+		console.log(scrollDistance);
+		if (scrollDistance > 100) {
+	 	$('.main-header').addClass('fixed');
+		}
+		else {
+	 	$('.main-header').removeClass('fixed');
+	}
+}	
+});
 
+			
+$('.main-header .clear').on('click', function() { 
+	$('.main-nav').toggle(300, 'easeinOutCubic');
+});
 
 
 

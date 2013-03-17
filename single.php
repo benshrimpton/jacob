@@ -115,18 +115,6 @@ $('#toggle-grid').on('click', function(e) {
 });
 
 
-$(window).on('scroll', function() { 
-	var scrollDistance  = $(this).scrollTop();
-	console.log(scrollDistance);
-	if (scrollDistance > 100) {
- 	$('.main-nav').addClass('fixed');
-	}
-	else {
- 	$('.main-nav').removeClass('fixed');
-	}
-});
-
-
 	
 $(window).on('resize', function() {
 		var winheight = $(window).innerHeight();
