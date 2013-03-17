@@ -30,12 +30,11 @@ include_once 'includes.php';
 <meta property="og:type" content="website">
 <meta property="og:image" content="<!-- path to image -->">
 <meta property="og:url" content="<?php bloginfo( 'template_url' ); ?>">
+<meta name="robots" content="noindex, nofollow">
 
-<!-- jQuery scripts 
+<!-- jQuery scripts --> 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="<?php bloginfo( 'template_url' ); ?>/js/jquery.js"><\/script>')</script>
--->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 
 <!-- plugin files for dev - put into one file fro production -->
 <script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/galleria-1.2.8/galleria-1.2.8.min.js"></script>
@@ -76,13 +75,8 @@ wp_head();
 
 <!-- <a href="#" id="toggle-nav">&#9776;</a> -->
 	<!-- <a href="#" id="toggle-grid">&#9776;</a> -->
+<h1 class="logo"><a href="<?php echo home_url( '/' ); ?>"></a></h1>
 
-<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-<?php if(is_front_page() ) : ?>
-	<img src="<?php bloginfo( 'template_url' ); ?>/css/img/logo-small.png" alt="Sarah Cobb Logo" id="logo"/>
-<? else :  ?>
-	<img src="<?php bloginfo( 'template_url' ); ?>/css/img/logo-small.png" alt="Sarah Cobb Logo" id="logo"/>
-<?php endif; ?>
 </a>
 
 

@@ -105,6 +105,9 @@ body {
 	-o-transition: all 3s ease-in-out;
 	transition: all 3s ease-in-out;;
 	background: black url(http://www.thakoon.com/images/fall-2013_background.jpg) no-repeat center center;
+/* 	background: black url(http://localhost:8888/jacobkimmie/wp-content/uploads/2013/03/3555990_orig.jpg) no-repeat center center; */
+	/* 	background: black url(css/img/bkg.jpg) repeat-x; */
+
 	background-size: cover;
 	background-attachment:fixed;
 	
@@ -120,6 +123,7 @@ body.home {
 a:hover {
 	color: black
 }
+.home.iphone .main-header,
 .main-header{
 	position: relative;
 	left: 0;
@@ -128,7 +132,7 @@ a:hover {
 	margin: 0 auto 20px auto;
 	padding: 10px 20px;
 	z-index: 600;
-	width: 100%;
+	width: auto;
 	background: black;
 	-webkit-transition: all 0.3s cubic-bezier(0.77,0,0.175,1);
 -moz-transition: all 0.3s cubic-bezier(0.77,0,0.175,1);
@@ -137,6 +141,13 @@ a:hover {
 transition: all 0.3s cubic-bezier(0.77,0,0.175,1);
 
 }
+.home .main-header {
+	position: absolute;
+	top:50%;
+	margin-top: -25px;
+	opacity: 0;
+}
+
 .main-header.fixed {
 	position: fixed;
 	top:0;
@@ -152,15 +163,22 @@ box-shadow: 0 3px 5px rgba(0,0,0,0.6);
 	height: auto;
 }
 */
+
 .logo {
-	font-size: 2em;
-}
-#logo {
-	height: 30px;
+	height: 26px;
+	width: 242px;
 	display: block;
 	margin: 0;
 	position: relative;
 	float: left;
+}
+.logo a {
+display: block;
+position: absolute;
+left: 0;
+right: 0;
+top: 0;bottom: 0;
+	background: url(css/img/logo-small.png) no-repeat 0 0;
 }
 /*
 .home #logo {
@@ -225,7 +243,8 @@ box-shadow: 0 3px 5px rgba(0,0,0,0.6);
 	
 }
 
-.main-nav ul li a:hover {
+.main-nav ul li a:hover,
+.main-nav ul li.current_page_item a {
 	border-bottom: solid 3px #fff;
 }
 .main-nav ul li:last-child a {
@@ -236,13 +255,12 @@ box-shadow: 0 3px 5px rgba(0,0,0,0.6);
 	margin: 0 auto;
 }
 #galleria-wrap-home {
-	position: absolute;
+	position: relative;
 	margin: 0;
 	top:0;
 	right:0;
 	left: 0;
 	bottom: 0;
-	min-height: 400px;
 	height: 100%;
 }
 #galleria-hidden {
@@ -322,7 +340,9 @@ top:500px;
 width: 60%;
 margin: 0px auto;
 text-align: center;
-font-size: 1em;
+font-size: 1.2em;
+color: white;
+padding: 60px 30px;
 }
 .general h2 {
 	text-transform: uppercase;
@@ -330,7 +350,7 @@ font-size: 1em;
 	padding-top: 40px;
 }
 .general p {
-	margin: 0 auto 1em auto;
+	margin: 0 auto 20px auto;
 }
 .general p a:hover {
 	text-decoration: underline
@@ -355,6 +375,11 @@ font-size: 1em;
 	color: #888;
 	font-family:Arial;
 	text-transform: uppercase;
+	border-top: solid 1px #333;
+	box-shadow: -3px 0 5px rgba(0,0,0,0.2);
+}
+.main-footer .footer-credits {
+	float: left;
 }
 .main-footer  a:hover {
 	color: white
@@ -399,6 +424,9 @@ display: block;
 #grid img:hover {
 	opacity: 0.5;
 } 
+
+
+/* ======= | ====== collections ========= */
 .collections {
 	padding-bottom: 100px;
 }
@@ -411,9 +439,32 @@ display: block;
 	margin: 0 0 10px 0;	
 }
 .thumb {
-	float: left;
-	width: 12.5%;
+	float: left; 
+	width: 100px;
+	height: 150px;
+	margin: 0 5px 5px 0;
+	border: solid 1px gray;
+	-webkit-transition: border 0.3s cubic-bezier(0.77,0,0.175,1);
+	-moz-transition: border 0.3s cubic-bezier(0.77,0,0.175,1);
+	-o-transition: border 0.3s cubic-bezier(0.77,0,0.175,1);
+	-ms-transition: border 0.3s cubic-bezier(0.77,0,0.175,1);
+	transition: border 0.3s cubic-bezier(0.77,0,0.175,1);
+	position: relative;
 
+}
+.thumb .thumb-close {
+	position: absolute;
+	top:90px;
+	right:20px;
+	border: solid 1px white;
+	text-indent: -10000px;
+	height: 40px;
+	width: 40px;
+	cursor: pointer;
+	display: none;
+}
+.thumb:hover {
+	border-color: white
 }
 .thumb .data {
 color: white;
@@ -436,7 +487,7 @@ display: none;
 }
 .thumb img {
 	display: block;
-	cursor: pointer;
+	cursor: -webkit-zoom-in;
 	margin: 0 auto;
 	width: 100%;
 	height: auto;
@@ -444,32 +495,95 @@ display: none;
 .thumb.large {
 	position: fixed;
 	top:0px;
-	bottom: 30px;
+	bottom: 20px;
 	left: 0;
 	right: 0;
 	background: black;
 	background: rgba(0,0,0,0.8);
 	z-index: 300;
-	width: 100%
+	width: 100%;
+	height: auto;
+	border: none;
+}
+.thumb.large > .thumb-close {
+	display: block;
 }
 .thumb.large .data {
 color: white;
 display: block;
 position: absolute;
-top:100px;
-left: 40px;
-	
+top:50%;
+left: 50%;
+z-index: 600;
+text-align: center;
+width: 320px;
+height: 200px;
+margin-left: -160px;
+margin-top: -100px;
+}
+.thumb.large .data h3 {
+font-size: 2em;	
 }
 .thumb.large img {
-	height: 100%;
+	height: 88%;
 	width: auto;
-	margin: 0 auto
+	margin: 70px auto 30px auto;
+		cursor: -webkit-zoom-out;
 }
-
-
-
-
-
+.thumb.next,
+.thumb.prev {
+	position: absolute;
+	right: 0;
+	top:25%;
+	height: 50%;
+	border: none;
+	width: auto;
+	float: left;
+}
+.thumb.next img,
+.thumb.prev img {
+opacity: .7;
+-webkit-transition: all 0.3s cubic-bezier(0.77,0,0.175,1);
+-moz-transition: all 0.3s cubic-bezier(0.77,0,0.175,1);
+-o-transition: all 0.3s cubic-bezier(0.77,0,0.175,1);
+-ms-transition: all 0.3s cubic-bezier(0.77,0,0.175,1);
+transition: all 0.3s cubic-bezier(0.77,0,0.175,1);
+height: 100%;
+width: auto;
+margin: 0;
+padding: 0;
+}
+.thumb.next img  {
+/* for firefox */
+	float: right;
+}
+.thumb.next img:hover,
+.thumb.prev img:hover {
+	opacity: 1;
+}
+.thumb.prev {
+	left: 0;
+	right: auto;
+}
+.thumb.next .data,
+.thumb.prev .data {
+	text-align: left;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	top:auto;
+	display: none;
+	border: dashed 1px silver;
+	padding: 10px;
+}
+.thumb.next .data {
+	text-align: right
+}
+.thumb.next:hover .data,
+.thumb.prev:hover .data {
+	display: block
+} 
+/* ======= | ====== END collections ========= */
 
 
 /* Media queries */
@@ -491,12 +605,8 @@ left: 40px;
 	}
 }
 @media only screen and (max-width:600px) {
-	#logo {
-	height: auto;
-	display: block;
-	float:  none;
-	margin: 0 auto;
-	margin: 10px auto
+	.mobile-no-float {
+		float: none !important;
 	}
 	#galleria-wrap {
 		position: relative;
@@ -511,13 +621,8 @@ left: 40px;
 	.logo,
 	.logo a,
 	.tagline {
-		width: 100%;
-		height: 30px;
-		background: black;
-		text-align: center;
-		color: white;
-		font-size: 1em;
-		line-height: 30px;
+		float: none;
+		margin: 0 auto;
 	}
 	.tagline {
 		display: none;
@@ -569,13 +674,22 @@ left: 40px;
 }
 	.general {
 	width: auto;
-	left: 20px;
-	right: 20px;
+	max-width: auto;
+	font-size: 1em;
+/* 	white-space: pre; */
 	}
 	.thumb {
 		float: left;
 		width: 33.333%;
 	
+	}
+	.main-footer {
+		height: auto;
+		line-height: auto;
+		text-align: center;
+		padding: 20px 0;
+		position: relative;
+		clear: both
 	}
 }
 

@@ -13,13 +13,17 @@
 </section><!-- .content -->
 <footer role="contentinfo" class="main-footer clear">
 
-&copy; <?php the_time('Y'); ?> | <?php bloginfo( 'title' ); ?> | website by <a href="http://blackandblackcreative.com" target="_blank" title="Website by Black &amp; Black Creative">Black &amp; Black Creative</a>
 
-<ul class="social">
-<li><a href="">Twitter</a></li>
-<li><a href="">Facebook</a></li>
-<li><a href="">Pintrest</a></li>
+
+<ul class="social mobile-no-float">
+<li><a href="" class="mobile-no-float" target="_blank" title="Twitter">Twitter</a></li>
+<li><a href="" class="mobile-no-float" target="_blank" title="Facebook">Facebook</a></li>
+<li><a href="" class="mobile-no-float" target="_blank" title="Pinterest">Pintrest</a></li>
 </ul>
+
+<div class="footer-credits mobile-no-float">
+&copy; <?php the_time('Y'); ?> | <?php bloginfo( 'title' ); ?> | website by <a href="http://blackandblackcreative.com" target="_blank" title="Website by Black &amp; Black Creative">Black &amp; Black Creative</a>
+</div>
 
 </footer><!-- footer -->
 <?php

@@ -27,18 +27,27 @@ get_header(); ?>
 	<?php query_posts('category_name=collections&posts_per_page=10'); ?>
 	<?php  while ( have_posts() ) : the_post(); ?>
 	<div class="collections-wrap">
-		<h2><? the_title(); ?></h2>
+		<h2><? the_title(); ?> &nbsp;&nbsp; : &nbsp;&nbsp;<span id="look-title"></span></h2>
 		<?php
 		$images = get_field('image');
 		$image = $images[0];
 		?>
 		<?php foreach( $images as $image ): ?>
 		<div class="thumb">
-			<img src="<?php bloginfo( 'template_url' ); ?>/css/img/loader.gif" data-large="<?php echo $image['sizes']['large']; ?>" class="lazy" data-original="<?php echo $image['sizes']['thumbnail']; ?>"/>
+	
+			<img src="http://i.imgur.com/1aGGWAO.gif" data-large="<?php echo $image['sizes']['large']; ?>" class="lazy" data-original="<?php echo $image['sizes']['thumbnail']; ?>"/>
 			<div class="data">
 				<h3><?php echo $image['title']; ?></h3>
 				<p><?php echo $image['caption']; ?></p>
+					<ul class="social">
+					<li><a href="">Twitter</a></li>
+					<li><a href="">Facebook</a></li>
+					<li><a href="">Pintrest</a></li>
+					<li><a href="">Share</a></li>
+					</ul>
+					<a href=#>Add To My Favorites</a>
 			</div>
+				<div class="thumb-close"></div>
 		</div>
 		
 		<?php endforeach; ?>
